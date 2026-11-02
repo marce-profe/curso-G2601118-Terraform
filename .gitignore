@@ -1,0 +1,26 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Variables sensibles
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Credenciales y secretos
+.aws/
+.env
+.env.*
+
+# Claves privadas
+*.pem
+*.key
+
+# Archivos temporales
+*.swp
+*~
+.DS_Store
