@@ -5,5 +5,5 @@ output "bucket_datos" {
 
 output "bucket_logs" {
   description = "Nombre del bucket de logs"
-  value       = ___ # complétalo como el output anterior
+  value       = aws_s3_bucket.logs.bucket   # complétalo como el output anterior
 }

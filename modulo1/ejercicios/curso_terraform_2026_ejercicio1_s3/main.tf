@@ -18,18 +18,21 @@ resource "aws_s3_bucket" "datos" {
 # El versionado permite mantener varias versiones de un mismo objeto en el bucket.
 # Mediante este ejemplo vemos cómo podemos referenciar un recurso desde otro, usando su nombre local y el atributo id.
 resource "aws_s3_bucket_versioning" "datos" {
-  bucket = ___ # referencia al id del bucket "datos"
+  bucket = aws_s3_bucket.datos.id # referencia al id del bucket "datos"
 
   versioning_configuration {
-    status = ___ # "Enabled" o "Disabled"
+    status = "Enabled" # "Enabled" o "Disabled"
   }
 }
 
 # Bucket 2: complétalo tomando como modelo el bucket 1.
 # Debe llamarse "<prefijo>-tf-logs" y llevar las mismas etiquetas.
-resource "aws_s3_bucket" "___" { # nombre local: logs
-  bucket        = ___
+resource "aws_s3_bucket" "logs" { # nombre local: logs
+  bucket        = "${var.prefijo}-tf-logs"
   force_destroy = true
 
-  tags = ___
+  tags = {
+    Curso  = "G2601118"
+    Modulo = "1"
+  }
 }
