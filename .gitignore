@@ -24,3 +24,9 @@ crash.*.log
 *.swp
 *~
 .DS_Store
+
+# Entregables del curso (capturas y comprimidos)
+**/entregables/
+**/entregables-tarea/
+*entregab*.tar.gz
+*entregab*.zip
