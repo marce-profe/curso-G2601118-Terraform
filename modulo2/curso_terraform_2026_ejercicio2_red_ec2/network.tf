@@ -19,10 +19,10 @@ resource "aws_vpc" "principal" {
 
 # Paso 1 · Subred pública (complétala)
 resource "aws_subnet" "publica" {
-  vpc_id                  = aws_vpc.principal.id # referencia al id de la VPC
+  vpc_id                  = aws_vpc.principal.id    # referencia al id de la VPC
   cidr_block              = var.subred_publica_cidr # variable subred_publica_cidr
-  availability_zone       = var.zona # variable zona
-  map_public_ip_on_launch = true # true: las instancias reciben IP pública
+  availability_zone       = var.zona                # variable zona
+  map_public_ip_on_launch = true                    # true: las instancias reciben IP pública
 
   tags = {
     Name = "${var.prefijo}-subred-publica" # "<prefijo>-subred-publica"

@@ -19,9 +19,9 @@ locals {
 # Documentación:
 #   https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 resource "aws_instance" "web" {
-  ami                         = local.ami # local.ami
-  instance_type               = var.tipo_instancia # variable tipo_instancia
-  subnet_id                   = aws_subnet.publica.id # la subred pública
+  ami                         = local.ami                   # local.ami
+  instance_type               = var.tipo_instancia          # variable tipo_instancia
+  subnet_id                   = aws_subnet.publica.id       # la subred pública
   vpc_security_group_ids      = [aws_security_group.web.id] # lista con el grupo de seguridad web
   user_data_replace_on_change = true
 
